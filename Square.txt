@@ -1,0 +1,12 @@
+void setup() {                
+   Serial.begin(9600);
+   Serial.println();
+   float x= 4.0;
+   //Serial.println(sqrt(x));
+   Serial.println(sq(x));
+   
+}
+
+void loop() {
+
+}

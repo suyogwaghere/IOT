@@ -1,0 +1,35 @@
+int redPin = 11;
+int bluePin = 10;
+int greenPin = 9;
+
+int redValue;
+int blueValue;
+int greenValue;
+
+void setup()
+{
+	pinMode(redPin,OUTPUT);
+	pinMode(bluePin,OUTPUT);
+	pinMode(greenPin,OUTPUT);
+
+	pinMode(A0,INPUT);
+	pinMode(A1,INPUT);
+	pinMode(A2,INPUT);
+}
+
+void loop()
+{
+	int pot1 = analogRead(A0);
+	int pot2 = analogRead(A1);
+	int pot3 = analogRead(A2);
+
+	redValue = map(pot1,0,1023,0,255);
+	blueValue = map(pot2,0,1023,0,255);
+	greenValue = map(pot3,0,1023,0,255);
+
+	analogWrite(redPin,redValue);
+	analogWrite(bluePin,blueValue);
+	analogWrite(greenPin,greenValue);
+
+	delay(10);
+}
